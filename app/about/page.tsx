@@ -82,9 +82,9 @@ export default function About() {
                 <div className="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-lg">
                   <div className="flex items-center mb-3">
                     <Tv className="w-6 h-6 mr-2" />
-                    <h3 className="text-xl font-semibold">Watching Anime & Donghua</h3>
+                    <h3 className="text-xl font-semibold">Watching Anime </h3>
                   </div>
-                  <p>In my free time, I love watching anime and donghua. These animated series offer captivating stories and stunning visuals that inspire my creativity.</p>
+                  <p>In my free time, I love watching anime. These animated series offer captivating stories and stunning visuals that inspire my creativity.</p>
                 </div>
               </motion.div>
             </div>

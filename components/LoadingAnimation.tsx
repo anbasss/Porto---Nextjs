@@ -1,58 +1,78 @@
-import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-export const LoadingAnimation = () => {
-  const [progress, setProgress] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((oldProgress) => {
-        if (oldProgress === 100) {
-          clearInterval(timer)
-          return 100
-        }
-        const newProgress = oldProgress + 1
-        return newProgress
-      })
-    }, 50)
-
-    return () => {
-      clearInterval(timer)
+const rocketVariants = {
+  initial: { y: 0, x: '-50%' },
+  animate: { 
+    y: [0, -30, 0], 
+    x: '-50%',
+    transition: {
+      y: {
+        repeat: Infinity,
+        duration: 2,
+        ease: "easeInOut"
+      }
     }
-  }, [])
+  }
+}
 
+const starVariants = {
+  initial: { opacity: 0, scale: 0 },
+  animate: { 
+    opacity: [0, 1, 0],
+    scale: [0, 1, 0],
+    transition: {
+      repeat: Infinity,
+      duration: 2,
+      ease: "easeInOut"
+    }
+  }
+}
+
+export const LoadingAnimation = () => {
   return (
-    <div className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-blue-900 via-purple-900 to-black">
-      <div className="relative w-64 h-64 border-4 border-blue-500 rounded-full overflow-hidden">
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 bg-blue-500"
-          initial={{ height: 0 }}
-          animate={{ height: `${progress}%` }}
-          transition={{ duration: 0.5 }}
-        >
+    <motion.div
+      className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-blue-900 via-purple-900 to-black overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="absolute inset-0">
+        {[...Array(50)].map((_, index) => (
           <motion.div
-            className="absolute top-0 left-0 right-0 h-2 bg-blue-300 opacity-30"
-            animate={{
-              y: [-10, 0, -10],
+            key={index}
+            className="absolute w-2 h-2 bg-white rounded-full"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
             }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            variants={starVariants}
+            initial="initial"
+            animate="animate"
+            transition={{ delay: index * 0.1 }}
           />
+        ))}
+      </div>
+      <div className="relative ml-[100px]">
+        <motion.div
+          className="text-8xl"
+          variants={rocketVariants}
+          initial="initial"
+          animate="animate"
+        >
+          🚀
         </motion.div>
       </div>
       <motion.p
-        className="mt-8 text-white font-bold text-2xl"
+        className="mt-8 text-white font-bold text-3xl relative z-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        Loading... {progress}%
+        Launching...
       </motion.p>
-      <span className="sr-only">Loading animation showing a circular container filling with water, currently at {progress} percent</span>
-    </div>
+      <span className="sr-only">Loading animation showing a large rocket launching among a sky full of twinkling stars</span>
+    </motion.div>
   )
 }
 
