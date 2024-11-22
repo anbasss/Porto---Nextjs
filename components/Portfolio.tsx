@@ -63,7 +63,7 @@ export const Portfolio = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              I'm a passionate web developer with a keen eye for design and a love for creating seamless user experiences. With expertise in modern web technologies, I bring ideas to life through clean, efficient, and scalable code. My goal is to craft beautiful, functional websites that leave a lasting impression on users.
+              I&apos;m a passionate web developer with a keen eye for design and a love for creating seamless user experiences. With expertise in modern web technologies, I bring ideas to life through clean, efficient, and scalable code. My goal is to craft beautiful, functional websites that leave a lasting impression on users.
             </motion.p>
           </div>
         </div>

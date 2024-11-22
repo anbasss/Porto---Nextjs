@@ -68,7 +68,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 1.4 }}
               >
                 <Code className="inline-block mr-2 text-green-400" />
-                I'm on a mission to build new Web Technologies and Products, venturing into the blockchain galaxy.
+                I&apos;m on a mission to build new Web Technologies and Products, venturing into the blockchain galaxy.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
@@ -85,4 +85,3 @@ export default function Home() {
     </Layout>
   )
 }
-
