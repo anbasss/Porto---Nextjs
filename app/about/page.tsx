@@ -50,7 +50,7 @@ export default function About() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  I'm a passionate web developer with a keen eye for design and a love for creating seamless user experiences. With expertise in modern web technologies, I bring ideas to life through clean, efficient, and scalable code. My goal is to craft beautiful, functional websites that leave a lasting impression on users.
+                  I&apos;m a passionate web developer with a keen eye for design and a love for creating seamless user experiences. With expertise in modern web technologies, I bring ideas to life through clean, efficient, and scalable code. My goal is to craft beautiful, functional websites that leave a lasting impression on users.
                 </motion.p>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function About() {
                     <Gamepad className="w-6 h-6 mr-2" />
                     <h3 className="text-xl font-semibold">Football Gaming</h3>
                   </div>
-                  <p>I'm passionate about football games. Whether it's FIFA or PES, I love the thrill of virtual matches and building my ultimate team.</p>
+                  <p>I&apos;m passionate about football games. Whether it&apos;s FIFA or PES, I love the thrill of virtual matches and building my ultimate team.</p>
                 </div>
                 <div className="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-lg">
                   <div className="flex items-center mb-3">
@@ -94,4 +94,3 @@ export default function About() {
     </Layout>
   )
 }
-
