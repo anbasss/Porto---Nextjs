@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Layout } from '../../components/Layout'
-import { CodepenIcon as ReactIcon, FileCode2, TypeIcon as TypeScriptIcon, Palette, Server, FileJson, Database, GitGraphIcon as GraphIcon,  } from 'lucide-react'
+import { CodepenIcon as ReactIcon, FileCode2, TypeIcon as TypeScriptIcon, Palette, Server, FileJson } from 'lucide-react'
 
 const skills = [
   { name: 'React', icon: ReactIcon },
